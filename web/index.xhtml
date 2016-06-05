@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!-- index.xhtml -->
+<!-- Allow the user to select a topic -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Topic Selection Page</title>
+    </h:head>
+    <h:body>
+        <h1>  Welcome to Sessions!</h1>
+        <p>You have made #{selectionsBean.numberOfSelections} selection(s) </p>
+        <h3>select items and Press Submit</h3>
+        <h:form>
+            <h:selectOneRadio id="topicSelectOneRadio" required="true"
+               requiredMessage="Please choose a topic, then press Submit"
+               value="#{selectionsBean.selection}">
+                <f:selectItem itemValue="java" itemLabel="Java $320"/>
+                <f:selectItem itemValue="cpp" itemLabel="C++  $200"/> 
+                <f:selectItem itemValue="iphone" itemLabel="iPhone $500"/> 
+                <f:selectItem itemValue="android" itemLabel="Android 180"/> 
+            </h:selectOneRadio>
+            <p><h:commandButton value="Submit"/></p>
+        </h:form>
+        <p>
+            <h:outputLink value="Shoppingcart.xhtml">
+                Click here for checking out page
+            </h:outputLink>
+        </p>
+    </h:body>
+</html>
+
